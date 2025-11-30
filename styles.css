@@ -1,0 +1,131 @@
+/* ========================================= */
+/* 1. ESTILOS BASE Y TIPOGRAFÍA */
+/* ========================================= */
+
+/* Fondo principal oscuro (negro) y color base del texto */
+body {
+    background-color: #0d0d0d; /* Negro muy oscuro */
+    color: #f8f9fa; /* Texto blanco suave */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Color para títulos principales y resaltados */
+h1, h2, h3, h4, h5, h6, .text-warning {
+    color: #ffc107 !important; /* Amarillo/Naranja para contraste */
+}
+
+/* Color primario de acento: Morado Oscuro */
+.text-purple {
+    color: #5a0a9a !important;
+}
+
+/* ========================================= */
+/* 2. BARRA DE NAVEGACIÓN (NAVBAR) */
+/* ========================================= */
+
+.navbar-custom {
+    /* Degradado sutil de negro a morado oscuro */
+    background: linear-gradient(to right, #1a1a1a, #380a58); 
+    border-bottom: 2px solid #5a0a9a; /* Borde inferior morado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107; /* Resaltado al pasar el ratón */
+}
+
+/* ========================================= */
+/* 3. BOTONES Y ELEMENTOS INTERACTIVOS */
+/* ========================================= */
+
+/* Estilo principal para botones (Morado) */
+.btn-purple, .nav-link-purple {
+    background-color: #5a0a9a;
+    border-color: #5a0a9a;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-purple:hover, .nav-link-purple:hover {
+    background-color: #7b1fa2; /* Morado más claro al pasar el ratón */
+    border-color: #7b1fa2;
+    color: #ffffff;
+    transform: translateY(-2px); /* Efecto 3D sutil */
+    box-shadow: 0 5px 15px rgba(90, 10, 154, 0.5);
+}
+
+/* ========================================= */
+/* 4. SECCIONES (HERO, PRODUCTOS) */
+/* ========================================= */
+
+header {
+    /* Fondo con degradado oscuro para que el texto resalte */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('placeholder-imagen-fondo.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    min-height: 400px;
+    display: flex; /* Centrado vertical */
+}
+
+/* Títulos de sección con borde inferior morado */
+main h2 {
+    border-bottom: 2px solid #5a0a9a !important;
+    padding-bottom: 10px;
+}
+
+/* ========================================= */
+/* 5. TARJETAS DE PRODUCTO */
+/* ========================================= */
+
+.card-custom {
+    background-color: #1a1a1a; /* Fondo más claro que el body para resaltar */
+    border: 1px solid #380a58; /* Borde morado oscuro */
+    color: #f8f9fa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(90, 10, 154, 0.6);
+}
+
+.card-img-top {
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Ajuste para que la imagen cubra el área */
+}
+
+/* Precio destacado en la tarjeta */
+.card-custom h4 {
+    font-size: 1.5rem;
+}
+
+
+/* ========================================= */
+/* 6. FOOTER Y ÁREA DE ADMINISTRADOR */
+/* ========================================= */
+
+footer {
+    background-color: #111;
+    border-top: 1px solid #380a58;
+    padding: 20px 0;
+    margin-top: 60px;
+}
+
+/* Animación para el botón de Admin (Intuitivo) */
+.admin-login-link {
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 500;
+}
+.admin-login-link:hover {
+    transform: scale(1.05);
+    color: #5a0a9a !important; /* Cambia a morado al pasar el ratón */
+}

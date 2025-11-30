@@ -1,0 +1,65 @@
+creacion admin_users:
+use tienda_futbol;
+CREATE TABLE admin_users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL 
+);
+
+-- INSERCIÓN SEGURA (usando BCRYPT para la contraseña 'admin123')
+-- El hash de 'admin123' puede variar, pero este es un ejemplo:
+-- Genera tu propio hash usando password_hash('tu_contraseña', PASSWORD_DEFAULT);
+INSERT INTO admin_users (username, password) VALUES 
+('admin', '$2y$10$tJ0jV8p0nJ/L8tq5lXz9f.H8jO7J3G1u4V2A8M0Z0v2H2T2I3o2Y.'); 
+-- Nota: El hash anterior es para la contraseña: 'admin123'
+
+Remplazo del hash sea el caso de la contra:
+-- Reemplaza 'TU_HASH_GENERADO' con el valor que copiaste del script.
+UPDATE admin_users SET password = '$2y$10$g4jzyDJQIQtR3hR6H.ihPuPVWRU6/POafhw/YDJn.r.4fdCcsGebW' WHERE username = 'admin'; 
+
+-- Si no tienes el usuario 'admin', primero insértalo:
+-- INSERT INTO admin_users (username, password) VALUES ('admin', 'TU_HASH_GENERADO');
+
+creacion de la base de datos:
+CREATE DATABASE IF NOT EXISTS tienda_futbol
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_spanish_ci;
+
+Cruds:
+-- ==========================================================
+-- 3. TABLA 2: TIPO_PRODUCTO (Para las categorías)
+-- ==========================================================
+-- Esta tabla almacena las categorías o tipos de productos.
+CREATE TABLE IF NOT EXISTS tipo_producto (
+    id_tipo INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_tipo VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- ==========================================================
+-- 4. TABLA 3: PRODUCTO (Para el inventario principal)
+-- ==========================================================
+-- Esta tabla almacena la información de cada artículo.
+CREATE TABLE IF NOT EXISTS producto (
+    id_producto INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    descripcion TEXT,
+    precio DECIMAL(10, 2) NOT NULL, -- Permite hasta 99999999.99
+    stock INT NOT NULL DEFAULT 0,
+    -- FK que relaciona el producto con su categoría
+    id_tipo_producto INT, 
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- ==========================================================
+-- 5. CLAVES FORÁNEAS (RELACIONES)
+-- ==========================================================
+
+-- Relaciona cada producto con un tipo_producto
+ALTER TABLE producto
+ADD CONSTRAINT fk_producto_tipo
+FOREIGN KEY (id_tipo_producto) 
+REFERENCES tipo_producto(id_tipo)
+-- Comportamiento: Si un tipo (categoría) se elimina, el id_tipo_producto 
+-- en la tabla producto se establece en NULL.
+ON DELETE SET NULL 
+ON UPDATE CASCADE;

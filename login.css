@@ -1,0 +1,14 @@
+/* Estilos específicos para el centro de la página de login */
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .login-card {
+            max-width: 400px;
+            width: 100%;
+            padding: 30px;
+        }
+        

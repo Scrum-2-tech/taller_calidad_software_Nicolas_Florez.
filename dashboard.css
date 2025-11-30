@@ -1,0 +1,68 @@
+        /* Contenedor principal para ocupar toda la altura */
+        .dashboard-container {
+            display: flex;
+            min-height: 100vh;
+            padding-top: 56px; /* Deja espacio para el Navbar fijo */
+        }
+
+        /* Sidebar: Morado oscuro y fijo */
+        .sidebar {
+            width: 250px;
+            min-width: 250px;
+            background-color: #380a58; /* Morado Oscuro de la paleta */
+            color: #f8f9fa;
+            padding: 15px;
+            position: fixed;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            overflow-y: auto;
+            border-right: 2px solid #5a0a9a;
+        }
+
+        /* Estilo para los enlaces de navegación del Sidebar */
+        .sidebar .nav-link {
+            color: #f8f9fa;
+            padding: 10px 15px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .sidebar .nav-link:hover, .sidebar .nav-link.active {
+            background-color: #5a0a9a; /* Morado más brillante */
+            color: #ffc107; /* Amarillo para texto activo/hover */
+        }
+        
+        /* Contenido Principal: Desplazado a la derecha del Sidebar */
+        .main-content {
+            flex-grow: 1;
+            margin-left: 250px; /* Igual al ancho del sidebar */
+            padding: 30px;
+        }
+        
+        /* Navbar para el dashboard, un poco más simple */
+        .navbar-dashboard {
+             background: #1a1a1a; /* Fondo oscuro */
+             border-bottom: 1px solid #380a58;
+        }
+        
+        /* Ajustar la posición de la barra lateral para que no se superponga con el navbar */
+        .sidebar-header {
+            margin-top: 56px; /* Desplaza el contenido del sidebar debajo del navbar */
+            padding-top: 15px;
+        }
+        
+        /* Contenedores de gestión para diferenciar secciones */
+        .gestion-card {
+            background-color: #1a1a1a;
+            border: 1px solid #380a58;
+        }
+        
+        /* Ajuste de formulario para el CRUD */
+        .form-control, .form-select {
+            background-color: #493232; /* Fondo oscuro en los inputs */
+            border-color: #380a58;
+            color: #f8f9fa;
+        }
