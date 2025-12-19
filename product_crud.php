@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Incluir la conexión y la lógica de seguridad
-include('db_connection.php');
+require_once('db_connection.php');
 
 // Redirigir si el usuario no está logueado
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
