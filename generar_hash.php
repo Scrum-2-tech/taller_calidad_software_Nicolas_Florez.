@@ -1,9 +1,8 @@
 <?php
-// Contraseña que deseas usar para el administrador (Ej: 'admin123')
 $password = $_POST['password'] ?? ''; 
 
 // Generar el hash seguro
-$hash = password_hash($password, PASSWORD_DEFAULT);
+$hash = password($password, PASSWORD_DEFAULT);
 
 echo "Contraseña en texto plano: " . $password . "<br>";
 echo "El hash generado es: " . $hash . "<br>";
