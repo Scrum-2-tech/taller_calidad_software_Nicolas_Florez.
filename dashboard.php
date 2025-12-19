@@ -8,7 +8,7 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
 }
 
 // Incluir la conexión a la base de datos
-include('db_connection.php');
+include_once('db_connection.php');
 
 // Obtener el nombre de usuario de la sesión para el saludo
 $admin_username = $_SESSION['admin_username'] ?? 'Administrador'; 
