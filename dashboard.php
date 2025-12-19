@@ -281,7 +281,7 @@ if (isset($_GET['active_tab']) && $_GET['active_tab'] == 'categories') {
                     </div>
                 </div>
                 
-                <div class="tab-pane fade <?php echo ($active_tab_id == 'v-pills-categories' ? 'show active' : ''); ?>" id="v-pills-categories" role="tabpanel" aria-labelledby="v-pills-categories-tab" tabindex="0">
+                <div class="tab-pane fade <?php echo ($active_tab_id == 'v-pills-categories' ? 'show active' : ''); ?>" id="v-pills-categories" role="tabpanel" aria-labelledby="v-pills-categories-tab" />
                     <div class="card gestion-card p-4">
                         <h3 class="text-white mb-4"><i class="bi bi-tags-fill me-2"></i> CRUD de Tipos de Producto</h3>
                         
