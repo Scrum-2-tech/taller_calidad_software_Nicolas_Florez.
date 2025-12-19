@@ -7,7 +7,7 @@ if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true
 }
 
 // Incluir el archivo de conexión a la BD
-include('db_connection.php');
+include_once('db_connection.php');
 
 $error = ''; // Variable para almacenar errores de login
 
